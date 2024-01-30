@@ -1,0 +1,132 @@
+local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+
+local PhantomForcesWindow = Library:NewWindow("GASTER HUB")local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+
+local PhantomForcesWindow = Library:NewWindow("GASTER HUB")
+
+local KillingCheats = PhantomForcesWindow:NewSection("Counter")
+
+KillingCheats:CreateButton("tp to lever", function()
+-- Create a LocalScript in StarterPlayerScripts or a Script in ServerScriptService
+
+-- Get the player's character
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+-- Define the target position
+local targetPosition = Vector3.new(-62.033687591552734, 6.642263412475586, -45.60237121582031)
+
+-- Teleport the character to the target position
+character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
+end)
+
+KillingCheats:CreateButton("destroy pim", function()
+-- Get the NPC
+local npc = workspace.Pim
+
+-- Define the teleport position and orientation
+local position = Vector3.new(-516.951111, 8.21111965, -141.350296)
+local orientation = Vector3.new(1.00135803e-05, 7.00354576e-06, 1)
+
+-- Create a CFrame using the position and orientation
+local teleportCFrame = CFrame.new(position, position + orientation)
+
+-- Teleport the NPC to the specified CFrame
+npc.HumanoidRootPart.CFrame = teleportCFrame
+end)
+
+KillingCheats:CreateButton("tp to counter", function()
+local maze = workspace:FindFirstChild("Maze")
+if maze then
+    local parts = maze:GetChildren()
+    local partIndex = 673
+    local part = parts[partIndex]
+    if part then
+        -- Do something with the part
+        print("Part found:", part.Name)
+
+        local Players = game:GetService("Players")
+
+        local function teleportPlayerToPart(player, part)
+            local humanoidRootPart = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
+            if humanoidRootPart then
+                humanoidRootPart.CFrame = part.CFrame
+                print("Teleported player", player.Name, "to", part.Name)
+            else
+                print("Player's HumanoidRootPart not found")
+            end
+        end
+
+        -- Example usage:
+        local playerToTeleport = Players.LocalPlayer -- Replace with the player you want to teleport
+        teleportPlayerToPart(playerToTeleport, part)
+    else
+        print("Part not found at index", partIndex)
+    end
+else
+    print("Maze not found in workspace")
+end
+end)
+
+local KillingCheats = PhantomForcesWindow:NewSection("elude")
+
+KillingCheats:CreateButton("get elude", function()
+
+-- Get the player's character
+local player = game.Players.LocalPlayer
+local character = player.Character
+
+-- Check if the character and HumanoidRootPart exist
+if character and character:FindFirstChild("HumanoidRootPart") then
+    -- Set the position of the HumanoidRootPart
+    character.HumanoidRootPart.Position = Vector3.new(-502.33563232421875, 13.407556533813477, -179.8163299560547)
+else
+    print("Character or HumanoidRootPart not found!")
+end
+end)
+
+local KillingCheats = PhantomForcesWindow:NewSection("Miscs")
+
+KillingCheats:CreateButton("Server hop", function()
+local module = loadstring(game:HttpGet"https://raw.githubusercontent.com/LeoKholYt/roblox/main/lk_serverhop.lua")()
+
+module:Teleport(game.PlaceId)
+end)
+
+KillingCheats:CreateButton("moai island", function()
+local player = game.Players.LocalPlayer
+local character = player.Character
+
+if character then
+    local root = character:FindFirstChild("HumanoidRootPart")
+    
+    if root then
+        local desiredCFrame = CFrame.new(221.628937, 0.760464668, 6.39289093, 0.895422816, 0, 0.445216835, 0, 1, 0, -0.445216835, 0, 0.895422816)
+        root.CFrame = desiredCFrame
+    end
+end
+end)
+
+KillingCheats:CreateButton("slappe island", function()
+local player = game.Players.LocalPlayer
+local character = player.Character
+
+if character then
+    local root = character:FindFirstChild("HumanoidRootPart")
+    
+    if root then
+        local desiredCFrame = CFrame.new(-430.110138, 73.1413345, -23.5344944, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+        root.CFrame = desiredCFrame
+    end
+end
+end)
+
+local KillingCheats = PhantomForcesWindow:NewSection("credits")
+
+KillingCheats:CreateButton("《in youtube》", function()
+print("the darkness keeps growing")
+end)
+
+KillingCheats:CreateButton("THEDARKNESSKEEPSGROWING", function()
+print("SUB TO ME")
+end)
